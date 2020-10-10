@@ -28,11 +28,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
             other.transform.GetComponent<Player>().damage();
         }
         if (other.gameObject.CompareTag("Laser"))
